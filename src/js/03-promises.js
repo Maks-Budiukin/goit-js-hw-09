@@ -4,31 +4,25 @@ const submitBtn = document.querySelector('[type="submit"]');
 const formEl = document.querySelector('.form');
 
 submitBtn.addEventListener('click', onClick);
-formEl.addEventListener('input', onInput);
 
 let delayVal = 0;
 let stepVal = 0;
 let amountVal = 0;
 
-
-function onInput() {
-
-delayVal = Number(formEl.delay.value);
-stepVal = Number(formEl.step.value);
-amountVal = Number(formEl.amount.value);
-
-}
-
-
 function onClick() {
     event.preventDefault();
       
+    delayVal = Number(formEl.delay.value);
+    stepVal = Number(formEl.step.value);
+    amountVal = Number(formEl.amount.value);
+
     for (let i = 1; i <= amountVal; i += 1) {
         
         createPromise(i, delayVal);
         delayVal += stepVal;
     }
-   
+
+    
 }
 
 function createPromise(position, delay) {
