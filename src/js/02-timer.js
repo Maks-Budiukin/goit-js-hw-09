@@ -38,7 +38,8 @@ const options = {
       seconds.textContent = `${convertMs(timeDiff).seconds}`.padStart(2, 0);
       
     } else {
-
+      startBtn.setAttribute("disabled", "disabled");
+      
       days.textContent = `00`;
       hours.textContent = `00`;
       minutes.textContent = `00`;
